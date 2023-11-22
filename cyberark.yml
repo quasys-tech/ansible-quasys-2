@@ -1,0 +1,33 @@
+- name: Cyberarks test quasys
+  hosts: all
+  collections:
+    - cyberark.pas
+  tasks:
+  - name: Logon to CyberArk Vault using PAS Web Services SDK
+    cyberark_authentication:
+      api_base_url: https://3.220.135.124
+      validate_certs: false
+      username: "Administrator"
+      password: "CyberArk123!"
+  - name: Creating an Account using the PAS WebServices SDK
+    cyberark_account:
+      logging_level: DEBUG
+      identified_by: "address,username"
+      safe: "ENESTEST"
+      address: "cyberark.local"
+      username: "administrator-x"
+      platform_id: WinServerLocal
+      secret: "@N&Ibl3!"
+      platform_account_properties:
+          LogonDomain: "cyberark"
+          OwnerName: "ansible_user"
+      secret_management:
+          automatic_management_enabled: true
+      state: present
+      cyberark_session: "{{ cyberark_session }}"
+    register: cyberarkaction
+ 
+  - name: Logoff from CyberArk Vault
+    cyberark_authentication:
+      state: absent
+      cyberark_session: "{{ cyberark_session }}"
