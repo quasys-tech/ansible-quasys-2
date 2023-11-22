@@ -1,5 +1,4 @@
 collections:
   - name: ansible.tower
-  - name: cyberark.pas
   - name: awx.awx
   
