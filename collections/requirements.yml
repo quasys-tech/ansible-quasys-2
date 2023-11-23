@@ -1,6 +1,0 @@
----
-collections:
-# Install a collection from Ansible Galaxy.
-- name: cyberark.pas
-  version: "1.0.23"
-  source: https://galaxy.ansible.com
