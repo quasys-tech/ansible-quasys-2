@@ -1,4 +1,0 @@
-collections:
-  - name: ansible.tower
-  - name: awx.awx
-  
