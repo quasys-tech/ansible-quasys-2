@@ -3,4 +3,4 @@ collections:
 # Install a collection from Ansible Galaxy.
 - name: cyberark.pas
   version: "1.0.23"
-  source: hhttps://example-aap.apps.ocplab03.quasys.com.tr/api/galaxy/content/staging/
+  source: https://example-aap.apps.ocplab03.quasys.com.tr/api/galaxy/content/staging/
